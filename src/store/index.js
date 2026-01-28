@@ -1,10 +1,21 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
+const THEME_STORAGE_KEY = 'ebirth_theme'
+
+const getInitialTheme = () => {
+  try {
+    const saved = localStorage.getItem(THEME_STORAGE_KEY)
+    return saved === 'dark' ? 'dark' : 'light'
+  } catch {
+    return 'light'
+  }
+}
+
 // UI slice: theme (light/dark) and any global UI state
 const uiSlice = createSlice({
   name: 'ui',
   initialState: {
-    theme: 'light', // 'light' | 'dark'
+    theme: getInitialTheme(), // 'light' | 'dark'
   },
   reducers: {
     toggleTheme: (state) => {
@@ -17,6 +28,7 @@ const uiSlice = createSlice({
 })
 
 export const { toggleTheme, setTheme } = uiSlice.actions
+export { THEME_STORAGE_KEY }
 
 export const store = configureStore({
   reducer: {

@@ -42,7 +42,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen])
 
   return (
-    <nav className="bg-white shadow-lg border-b-2 border-blue-600 sticky top-0 z-50 navbar-container">
+    <nav className="bg-white dark:bg-gray-900 shadow-lg border-b-2 border-blue-600 dark:border-gray-800 sticky top-0 z-50 navbar-container">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
@@ -54,8 +54,8 @@ const Navbar = () => {
                 </svg>
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-bold text-gray-800">Birth Registration</h1>
-                <p className="text-xs text-gray-600">Government System</p>
+                <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">Birth Registration</h1>
+                <p className="text-xs text-gray-600 dark:text-gray-300">Government System</p>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
                   `px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
                     isActive
                       ? 'bg-blue-600 text-white shadow-md'
-                      : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                      : 'text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600'
                   }`
                 }
               >
@@ -82,7 +82,7 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <button
               onClick={() => dispatch(toggleTheme())}
-              className="ml-4 flex items-center px-3 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
+              className="ml-4 flex items-center px-3 py-2 rounded-lg text-sm font-medium border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
             >
               {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
             </button>
@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition duration-200"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition duration-200"
               aria-expanded={isMobileMenuOpen}
               aria-label="Toggle menu"
             >
@@ -115,7 +115,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
             {menuItems.map((item) => (
               <NavLink
                 key={item.id}
@@ -126,7 +126,7 @@ const Navbar = () => {
                   `w-full block text-left px-4 py-3 rounded-lg font-medium text-base transition-all duration-200 ${
                     isActive
                       ? 'bg-blue-600 text-white shadow-md'
-                      : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                      : 'text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600'
                   }`
                 }
               >
@@ -140,7 +140,7 @@ const Navbar = () => {
                 dispatch(toggleTheme())
                 setIsMobileMenuOpen(false)
               }}
-              className="w-full mt-2 px-4 py-3 rounded-lg font-medium text-base border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
+              className="w-full mt-2 px-4 py-3 rounded-lg font-medium text-base border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
             >
               {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             </button>

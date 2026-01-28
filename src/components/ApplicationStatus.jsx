@@ -125,10 +125,10 @@ const ApplicationStatus = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-950 dark:to-gray-900 py-8 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-t-lg shadow-lg border-b-4 border-blue-600 p-6 mb-6">
+        <div className="bg-white dark:bg-gray-900 rounded-t-lg shadow-lg border-b-4 border-blue-600 p-6 mb-6">
           <div className="flex items-center justify-center mb-4">
             <div className="bg-blue-600 text-white rounded-full p-3 mr-4">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,18 +136,18 @@ const ApplicationStatus = () => {
               </svg>
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-800">Application Status</h1>
-              <p className="text-gray-600 mt-1">Check your birth registration application status</p>
+              <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Application Status</h1>
+              <p className="text-gray-600 dark:text-gray-300 mt-1">Check your birth registration application status</p>
             </div>
           </div>
         </div>
 
         {/* Search Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-6">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 mb-6">
           <form onSubmit={handleSearch} className="space-y-6">
             {/* Search Type Selection */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-3">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-3">
                 Search By
               </label>
               <div className="flex gap-4">
@@ -160,7 +160,7 @@ const ApplicationStatus = () => {
                     onChange={(e) => setSearchType(e.target.value)}
                     className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500"
                   />
-                  <span className="text-gray-700">Application ID</span>
+                  <span className="text-gray-700 dark:text-gray-200">Application ID</span>
                 </label>
                 <label className="flex items-center">
                   <input
@@ -171,14 +171,14 @@ const ApplicationStatus = () => {
                     onChange={(e) => setSearchType(e.target.value)}
                     className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500"
                   />
-                  <span className="text-gray-700">Child Name</span>
+                  <span className="text-gray-700 dark:text-gray-200">Child Name</span>
                 </label>
               </div>
             </div>
 
             {/* Search Input */}
             <div>
-              <label htmlFor="searchQuery" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="searchQuery" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                 {searchType === 'applicationId' ? 'Application ID' : 'Child Name'} <span className="text-red-500">*</span>
               </label>
               <div className="flex gap-2">
@@ -187,7 +187,7 @@ const ApplicationStatus = () => {
                   id="searchQuery"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                  className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
                   placeholder={searchType === 'applicationId' ? 'Enter Application ID (e.g., BR-XXXXX-XXXXX)' : 'Enter child\'s full name'}
                 />
                 <button
@@ -206,9 +206,9 @@ const ApplicationStatus = () => {
           <>
             {/* Application Found */}
             {application && (
-              <div className="bg-white rounded-lg shadow-lg p-8">
+              <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
                 <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-4">Application Details</h2>
+                  <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Application Details</h2>
                   
                   {/* Status Badge */}
                   <div className="mb-6">
@@ -261,13 +261,13 @@ const ApplicationStatus = () => {
 
                   {/* Application Information */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <p className="text-sm text-gray-600 mb-1">Application ID</p>
-                      <p className="font-semibold text-gray-800 font-mono">{application.applicationId}</p>
+                    <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">Application ID</p>
+                      <p className="font-semibold text-gray-800 dark:text-gray-100 font-mono">{application.applicationId}</p>
                     </div>
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <p className="text-sm text-gray-600 mb-1">Submitted Date</p>
-                      <p className="font-semibold text-gray-800">
+                    <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">Submitted Date</p>
+                      <p className="font-semibold text-gray-800 dark:text-gray-100">
                         {new Date(application.submittedAt).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'long',
@@ -391,7 +391,7 @@ const ApplicationStatus = () => {
         )}
 
         {/* Footer */}
-        <div className="mt-6 text-center text-gray-600 text-sm">
+        <div className="mt-6 text-center text-gray-600 dark:text-gray-400 text-sm">
           <p>© 2025 Online Birth Registration & Certificate System. All rights reserved.</p>
         </div>
       </div>

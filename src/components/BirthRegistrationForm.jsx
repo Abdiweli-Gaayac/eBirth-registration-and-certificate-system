@@ -326,11 +326,11 @@ const BirthRegistrationForm = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-950 dark:to-gray-900 py-8 px-4">
       {/* Success Modal */}
       {showSuccess && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg shadow-2xl max-w-md w-full p-8 animate-fade-in">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl max-w-md w-full p-8 animate-fade-in">
             <div className="text-center">
               {/* Success Icon */}
               <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
@@ -340,12 +340,12 @@ const BirthRegistrationForm = () => {
               </div>
               
               {/* Success Message */}
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">Registration Successful!</h2>
-              <p className="text-gray-600 mb-6">Your birth registration has been submitted successfully.</p>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">Registration Successful!</h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">Your birth registration has been submitted successfully.</p>
               
               {/* Application ID */}
-              <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6">
-                <p className="text-sm text-gray-600 mb-2">Your Application ID:</p>
+              <div className="bg-blue-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-gray-700 rounded-lg p-4 mb-6">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Your Application ID:</p>
                 <p className="text-2xl font-bold text-blue-600 font-mono tracking-wider">{applicationId}</p>
               </div>
               
@@ -368,9 +368,9 @@ const BirthRegistrationForm = () => {
         </div>
       )}
 
-      <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-t-lg shadow-lg border-b-4 border-blue-600 p-6 mb-6">
+          <div className="bg-white dark:bg-gray-900 rounded-t-lg shadow-lg border-b-4 border-blue-600 p-6 mb-6">
           <div className="flex items-center justify-center mb-4">
             <div className="bg-blue-600 text-white rounded-full p-3 mr-4">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -378,14 +378,14 @@ const BirthRegistrationForm = () => {
               </svg>
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-800">Birth Registration Form</h1>
-              <p className="text-gray-600 mt-1">Online Birth Registration & Certificate System</p>
+                <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Birth Registration Form</h1>
+                <p className="text-gray-600 dark:text-gray-300 mt-1">Online Birth Registration & Certificate System</p>
             </div>
           </div>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8">
+          <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
           {/* Child Information Section */}
           <div className="mb-8">
             <div className="flex items-center mb-6 pb-3 border-b-2 border-blue-600">
@@ -679,7 +679,7 @@ const BirthRegistrationForm = () => {
         </form>
 
         {/* Footer */}
-        <div className="mt-6 text-center text-gray-600 text-sm">
+        <div className="mt-6 text-center text-gray-600 dark:text-gray-400 text-sm">
           <p>© 2025 Online Birth Registration & Certificate System. All rights reserved.</p>
         </div>
       </div>
